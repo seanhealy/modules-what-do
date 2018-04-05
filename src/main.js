@@ -1,6 +1,5 @@
 import { prompt } from "inquirer";
-import { greeting } from "./constants";
-// import { Greeter } from "./Greeter";
+import { greeting } from "./kitchenSink";
 
 prompt([
   {
