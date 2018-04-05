@@ -1,5 +1,5 @@
 import { prompt } from "inquirer";
-import { greeting } from "./kitchenSink";
+import { greeting, colors } from "./kitchenSink";
 
 prompt([
   {
@@ -9,6 +9,12 @@ prompt([
   {
     name: "quest",
     message: "What is your quest?",
+  },
+  {
+    name: "color",
+    type: "list",
+    message: "What is your favourite colour?",
+    choices: colors,
   }
 ]).then(responses => {
   console.log(`${greeting} "${responses.name}"`);
