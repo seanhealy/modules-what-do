@@ -1,10 +1,16 @@
-import chalk from "chalk";
-import { foo } from "./constants";
+import { prompt } from "inquirer";
+import { greeting } from "./constants";
 
-console.log(foo);
-
-console.log([
-  chalk.red("Hello"),
-  chalk.yellow("There"),
-  chalk.green("World"),
-].join(" "));
+prompt([
+  {
+    name: "name",
+    message: "What is your name?",
+  },
+  {
+    name: "quest",
+    message: "What is your quest?",
+  }
+]).then(responses => {
+  console.log(`${greeting} "${responses.name}"`);
+  console.log(`Good luck with, "${responses.quest}"`);
+});
